@@ -238,7 +238,7 @@ class Classes(MutableSet[str]):
 #
 class HtmlProcessingInstruction(etree.PIBase, HtmlElement): ...  # type: ignore
 class HtmlComment(etree.CommentBase, HtmlElement): ...  # type: ignore
-class HtmlEntity(etree.EntityBase, HtmlElement): ...  # type: ignore
+class HtmlEntity(etree.EntityBase, HtmlElement): ...
 
 #
 # Factory func, signature same as etree.Element
