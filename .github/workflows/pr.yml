@@ -2,10 +2,11 @@ name: PR review
 
 on:
   pull_request:
-    branches-ignore:
-      - 'dependabot/**'
     paths-ignore:
-      - '.git*'
+      - '**/dependabot.yml'
+      - '.editorconfig'
+      - '**/.gitignore'
+      - '**/.gitattributes'
       - '**.md'
       - 'LICENSE'
 
@@ -30,8 +31,7 @@ jobs:
       id: mypy
       uses: tsuyoshicho/action-mypy@v4
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        reporter: github-pr-review
+        reporter: github-pr-check
         level: warning
         workdir: lxml-stubs
         fail_on_error: true
@@ -45,8 +45,7 @@ jobs:
       if: success() || steps.mypy.conclusion == 'failure'
       uses: jordemort/action-pyright@v1
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        reporter: github-pr-review
+        reporter: github-pr-check
         level: warning
         workdir: lxml-stubs
         fail_on_error: true
