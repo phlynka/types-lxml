@@ -411,7 +411,7 @@ class __ContentOnlyElement(_Element):
     @property
     def text(self) -> str | None: ...
     @text.setter
-    def text(  # pyright: ignore[reportIncompatibleMethodOverride]
+    def text(
         self, value: _t._AnyStr | None
     ) -> None: ...
     @property
@@ -419,13 +419,13 @@ class __ContentOnlyElement(_Element):
     def get(self, key: _t.Unused, default: _t.Unused = ...) -> None: ...  # type: ignore[override]
     def set(self, key: Never, value: Never) -> Never: ...  # type: ignore[override]
     def append(self, element: Never) -> Never: ...  # type: ignore[override]
-    def insert(self, index: Never, value: Never) -> Never: ...  # type: ignore[override]
+    def insert(self, index: Never, value: Never) -> Never: ...
     def __setitem__(self, __k: Never, __v: Never) -> Never: ...  # type: ignore[override]
     # The intention is to forbid elem.__getitem__, allowing slice
     # doesn't make any sense
-    def __getitem__(self, __k: Never) -> Never: ...  # type: ignore[override]
+    def __getitem__(self, __k: Never) -> Never: ...
     # Methods above are explicitly defined in source, while those below aren't
-    def __delitem__(self, __k: Never) -> Never: ...  # type: ignore[override]
+    def __delitem__(self, __k: Never) -> Never: ...
     def __iter__(self) -> Never: ...
 
     # TODO (low priority) There are many, many more methods that
