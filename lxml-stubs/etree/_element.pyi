@@ -411,13 +411,13 @@ class __ContentOnlyElement(_Element):
     @property
     def text(self) -> str | None: ...
     @text.setter
-    def text(  # pyright: ignore[reportIncompatibleMethodOverride]
+    def text(
         self, value: _t._AnyStr | None
     ) -> None: ...
     @property
-    def attrib(self) -> Mapping[_t.Unused, _t.Unused]: ...  # type: ignore[override]
-    def get(self, key: _t.Unused, default: _t.Unused = ...) -> None: ...  # type: ignore[override]
-    def set(self, key: Never, value: Never) -> Never: ...  # type: ignore[override]
+    def attrib(self) -> Mapping[_t.Unused, _t.Unused]: ...
+    def get(self, key: _t.Unused, default: _t.Unused = ...) -> None: ...
+    def set(self, key: Never, value: Never) -> Never: ...
     def append(self, element: Never) -> Never: ...  # type: ignore[override]
     def insert(self, index: Never, value: Never) -> Never: ...  # type: ignore[override]
     def __setitem__(self, __k: Never, __v: Never) -> Never: ...  # type: ignore[override]
